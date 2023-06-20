@@ -24,24 +24,78 @@ STEPPS------
     
 */ 
 
+let userChoice;
+do{
+    userChoice = prompt('inserisci "pari" o "dispari"')
+} while(userChoice != 'pari' && userChoice != 'dispari');
 
-const userNumber = parseInt(prompt('inserisci un numero tra 1 e 5'))
+let userNumber;
+do{
+  userNumber = prompt('inserisci un numero tra 1 e 5')
+} while(userNumber > 5 || userNumber <= 0)
 
-if(userNumber > 5){
-    prompt('inserisci un numero tra 1 e 5')
-}
+// random number per il bot
+
+const robotNumber = randomNumber (1 , 5);
+
+const sumUserAndBot = robotNumber + userNumber 
+
 
 console.log('userNumber', userNumber, typeof userNumber)
 
-console.log ('BOTnumber', randomNumber(1 , 5))
+if ((isEven() == true && userChoice == 'pari') || (isEven() == false && userChoice == 'dispari')){
+    console.log('ha vinto l\'user', 'user:',userNumber,'bot:',robotNumber )
+}
+else{
+    console.log('ha vinto il bot', 'user:',userNumber,'bot:',robotNumber)
+}
 
-const robotNumber = randomNumber (1 , 5)
+// console.log ('BOTnumber', randomNumber(1 , 5))
+
+// somma
+
+// const sumNumber = robotNumber + userNumber
+
+// console.log ('somma dei numeri',sumNumber)
+
+// se sia la somma che il numero scelto dal giocato è pari allora vince il giocatore 
+// se sia la somma che il numero scelto dal giocato sono dispari allora vince il giocatore 
+// altrimenti vince il bot 
+
+// if (sumNumber % 2 == 0 && evenNumber = true)
 
 
 
 
-  // FUNZIONI 
+// FUNZIONI 
 
-  function randomNumber(min, max) {
+function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
+}
+
+function isEven(){
+    // numero pari o dispari dell'utente 
+    if (sumUserAndBot % 2 == 0){
+        console.log('il numero e pari', userNumber, typeof userNumber)
+        return true;
+    }
+    else {
+        // userNumber = oddNumber
+        return false
+    }
+}
+  
+
+// const oddOrEvenUser = prompt('inserisci "pari" o "dispari"')
+// let oddUser = 'pari'
+// let evenUser = 'dispari'
+
+// if (oddOrEvenUser = 'pari'){
+    //     console.log ('hai scelto pari', oddUser)
+    // }
+    // else if (oddOrEvenUser = 'dispari'){
+        //     console.log ('hai scelto dispari', evenUser)
+        // }
+        // else{
+            //     console.log ('inserisci pari o dispari')
+            // }
