@@ -29,14 +29,35 @@ do{
     userChoice = prompt('inserisci "pari" o "dispari"')
 } while(userChoice != 'pari' && userChoice != 'dispari');
 
+
+
 let userNumber;
 do{
   userNumber = prompt('inserisci un numero tra 1 e 5')
 } while(userNumber > 5 || userNumber <= 0)
 
+// stampa numero utente 
+const myUser = document.getElementById ('user')
+
+const myDiv = document.createElement('div')
+myDiv.innerHTML = userNumber
+
+myUser.append(myDiv)
+
+
 // random number per il bot
 
+
+
 const robotNumber = randomNumber (1 , 5);
+
+// stampa numero bot 
+const mybot = document.getElementById ('bot')
+
+const myDivBot = document.createElement('div')
+myDivBot.innerHTML = robotNumber
+
+mybot.append(myDivBot)
 
 const sumUserAndBot = robotNumber + userNumber 
 
@@ -45,24 +66,23 @@ console.log('userNumber', userNumber, typeof userNumber)
 
 if ((isEven() == true && userChoice == 'pari') || (isEven() == false && userChoice == 'dispari')){
     console.log('ha vinto l\'user', 'user:',userNumber,'bot:',robotNumber )
+    
+    const winner = document.getElementById ('result')
+
+    const myDivWinner = document.createElement('div')
+    myDivWinner.innerHTML = 'bravo hai vinto!!!!!!'
+
+    winner.append(myDivWinner)
 }
 else{
     console.log('ha vinto il bot', 'user:',userNumber,'bot:',robotNumber)
+    const winner = document.getElementById ('result')
+
+    const myDivWinner = document.createElement('div')
+    myDivWinner.innerHTML = 'mi sipiace hai perso!'
+
+    winner.append(myDivWinner)
 }
-
-// console.log ('BOTnumber', randomNumber(1 , 5))
-
-// somma
-
-// const sumNumber = robotNumber + userNumber
-
-// console.log ('somma dei numeri',sumNumber)
-
-// se sia la somma che il numero scelto dal giocato è pari allora vince il giocatore 
-// se sia la somma che il numero scelto dal giocato sono dispari allora vince il giocatore 
-// altrimenti vince il bot 
-
-// if (sumNumber % 2 == 0 && evenNumber = true)
 
 
 
